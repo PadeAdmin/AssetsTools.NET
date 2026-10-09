@@ -1,4 +1,4 @@
-﻿using AssetsTools.NET.Extra;
+using AssetsTools.NET.Extra;
 using LibCpp2IL;
 using LibCpp2IL.Metadata;
 using LibCpp2IL.Reflection;
@@ -108,7 +108,7 @@ namespace AssetsTools.NET.Cpp2IL
             {
                 throw new Exception($"Type \"{nameSpace}::{className}\" was not found in the IL2CPP metadata.");
             }
-            Il2CppTypeReflectionData typeRef = new Il2CppTypeReflectionData
+            Il2CppTypeReflectionData typeRef = new Il2CppTypeReflectionData(LibCpp2IlMain.DefaultContext)
             {
                 baseType = type,
                 genericParams = Array.Empty<Il2CppTypeReflectionData>(),
@@ -525,3 +525,4 @@ namespace AssetsTools.NET.Cpp2IL
         }
     }
 }
+
